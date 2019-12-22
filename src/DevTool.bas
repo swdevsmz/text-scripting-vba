@@ -27,22 +27,19 @@ Public Sub ExportAllSource()
     
     ' VBAプロジェクトに含まれる全てのモジュールをループ
     For Each module In moduleList
-        ' クラス
-        If (module.Type = vbext_ct_ClassModule) Then
-            extension = "cls"
-        ' フォーム
-        ElseIf (module.Type = vbext_ct_MSForm) Then
-            ' .frxも一緒にエクスポートされる
-            extension = "frm"
-        ' 標準モジュール
-        ElseIf (module.Type = vbext_ct_StdModule) Then
-            extension = "bas"
-        ' その他
-        Else
-            ' エクスポート対象外のため次ループへ
-            GoTo CONTINUE
-        End If
-        
+    
+        Select Case module.Type
+            Case vbext_ct_ClassModule, vbext_ct_Document
+                extension = "cls"
+            Case vbext_ct_MSForm
+                extension = "frm"
+            Case vbext_ct_StdModule
+                extension = "bas"
+            Case Else
+                ' エクスポート対象外のため次ループへ
+                GoTo CONTINUE
+        End Select
+         
         ' エクスポート実施
         sFilePath = sSaveFolder & "\" & module.Name & "." & extension
         

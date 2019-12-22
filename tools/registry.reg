@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\VBA\7.1\Common]
+"CodeForeColors"="14 9 12 9 5 4 2 5 5 5 0 0 0 0 0 0 "
+"CodeBackColors"="1 6 1 4 10 1 1 1 1 6 0 0 0 0 0 0 "]

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <VbeTheme name="VS2017" desc="VS2017 Dark Theme">
+        <ThemeColors>
+        <Color colorID="1" HexColor="22282a" />
+        <Color colorID="2" HexColor="93c761" />
+        <Color colorID="3" HexColor="4ec9b0" />
+        <Color colorID="4" HexColor="608b4e" />
+        <Color colorID="5" HexColor="f1f2f3" />
+        <Color colorID="6" HexColor="3b4648" />
+        <Color colorID="7" HexColor="8ec763" />
+        <Color colorID="8" HexColor="417113" />
+        <Color colorID="9" HexColor="dcdcdc" />
+        <Color colorID="10" HexColor="7f3640" />
+        <Color colorID="11" HexColor="b0af4c" />
+        <Color colorID="12" HexColor="E51400" />
+        <Color colorID="13" HexColor="D69D85" />
+        <Color colorID="14" HexColor="CE9178" />
+        <Color colorID="15" HexColor="608B4E" />
+        <Color colorID="16" HexColor="B5CEA8" />
+      </ThemeColors>
+    </VbeTheme>
