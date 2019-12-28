@@ -21,7 +21,7 @@ Public Sub ExportAllSource()
     If Dir(sSaveFolder, vbDirectory) = "" Then
         MkDir sSaveFolder
     End If
-    
+      
     ' 処理対象ブックのモジュール一覧を取得
     Set moduleList = ActiveWorkbook.VBProject.VBComponents
     
