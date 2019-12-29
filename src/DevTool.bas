@@ -10,11 +10,11 @@ Option Explicit
 ' 2. 「VBAプロジェクト オブジェクトモデルへのアクセスを信頼する」オプションを指定する。
 ' </remarks>
 Public Sub ExportAllSource()
-    Dim module                  As VBComponent      ' モジュール
-    Dim moduleList              As VBComponents     ' VBAプロジェクトの全モジュール
-    Dim extension               As String           ' モジュールの拡張子
-    Dim sFilePath               As String           ' エクスポートファイルパス
-    Dim sSaveFolder             As String           ' 保存先フォルダ
+    Dim module                  As VBComponent   ' モジュール
+    Dim moduleList              As VBComponents  ' VBAプロジェクトの全モジュール
+    Dim extension               As String        ' モジュールの拡張子
+    Dim sFilePath               As String        ' エクスポートファイルパス
+    Dim sSaveFolder             As String        ' 保存先フォルダ
     
     sSaveFolder = ActiveWorkbook.Path & "\" & "src"
 
@@ -27,17 +27,17 @@ Public Sub ExportAllSource()
     
     ' VBAプロジェクトに含まれる全てのモジュールをループ
     For Each module In moduleList
-    
+
         Select Case module.Type
-            Case vbext_ct_ClassModule, vbext_ct_Document
-                extension = "cls"
-            Case vbext_ct_MSForm
-                extension = "frm"
-            Case vbext_ct_StdModule
-                extension = "bas"
-            Case Else
-                ' エクスポート対象外のため次ループへ
-                GoTo CONTINUE
+        Case vbext_ct_ClassModule, vbext_ct_Document
+            extension = "cls"
+        Case vbext_ct_MSForm
+            extension = "frm"
+        Case vbext_ct_StdModule
+            extension = "bas"
+        Case Else
+            ' エクスポート対象外のため次ループへ
+            GoTo CONTINUE
         End Select
          
         ' エクスポート実施
@@ -51,3 +51,28 @@ CONTINUE:
     Next
     
 End Sub
+
+'<summary>
+' 機能: 全シートを表示
+' 引数: なし
+' </summary>
+Public Sub ShowSheets()
+    Dim objSheet As Worksheet
+    For Each objSheet In ThisWorkbook.Worksheets
+        objSheet.Visible = xlSheetVisible
+    Next
+End Sub
+
+'<summary>
+' 機能: Sheet1以外の全シートを非表示にする
+' 引数: なし
+' </summary>
+Public Sub HideSheets()
+    Dim objSheet As Worksheet
+    For Each objSheet In ThisWorkbook.Worksheets
+        If objSheet.Name <> "Sheet1" Then
+            objSheet.Visible = xlSheetVeryHidden
+        End If
+    Next
+End Sub
+

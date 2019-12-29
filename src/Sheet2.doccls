@@ -1,0 +1,7 @@
+﻿Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+
+'    Call WorkSheetUtil.CopySheet("aaa", "bbb")
+'
+'    Call WorkSheetUtil.CopySheet("aaa", "bbb")
+    
+End Sub
